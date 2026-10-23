@@ -1,0 +1,26 @@
+/*
+  Tokens da Recebecom.
+  Cores, tipo e raios entram aqui. Componentes usam as utilidades
+  geradas (bg-ink, text-muted, font-display) e não hex solto.
+*/
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #3d0c16;
+  --color-muted: #6a5f59;
+  --color-taupe: #8a7f78;
+  --color-line: #e4d9d3;
+  --color-paper: #f5efea;
+  --color-accent: #6b1126;
+  --color-accent-strong: #3d0c16;
+  --color-accent-soft: #f6e8ea;
+  --color-inverse: #3d0c16;
+  --color-inverse-muted: #e7d5d8;
+  --color-danger: #8e1e32;
+
+  --radius-control: 0.875rem;
+  --radius-card: 1.5rem;
+  --radius-panel: 2rem;
+}
