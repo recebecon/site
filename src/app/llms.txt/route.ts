@@ -72,6 +72,8 @@ export function GET() {
     "",
     "Público: síndico, administradora e conselho. O condômino com débito usa a consulta de pendências.",
     "",
+    "A Recebecom é assessorada pelo [Grupo Ferreira França](https://grupoferreirafranca.com.br/), advocacia e assessoria empresarial.",
+    "",
     "## Páginas",
     "",
     ...pages.map(

@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
 import { site } from "@/content/site";
-import { organizationJsonLd } from "@/lib/structured-data";
+import { siteJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
 const sans = Geist({
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sans.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white font-sans text-ink">
-        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={siteJsonLd()} />
         <a
           href="#conteudo"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-control focus:bg-white focus:px-4 focus:py-2"

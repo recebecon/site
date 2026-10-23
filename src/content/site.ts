@@ -26,3 +26,13 @@ export const socialLinks = [
     label: "Facebook da Recebecom",
   },
 ] as const;
+
+export const advisor = {
+  name: "Grupo Ferreira França",
+  alternateName: "Ferreira França Advocacia e Assessoria Empresarial",
+  description: "Advocacia e Assessoria Empresarial",
+  url: "https://grupoferreirafranca.com.br/",
+  logo: "/brand/ferreira-franca.png",
+  logoWidth: 640,
+  logoHeight: 89,
+} as const;

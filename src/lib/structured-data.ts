@@ -1,19 +1,71 @@
-import { site } from "@/content/site";
+import { advisor, site, socialLinks } from "@/content/site";
+import { services } from "@/content/services";
 import { absoluteUrl } from "@/lib/metadata";
 
-export function organizationJsonLd() {
+const organizationId = `${site.url}/#organization`;
+const websiteId = `${site.url}/#website`;
+
+export function siteJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: site.name,
-    url: site.url,
-    description: site.description,
-    slogan: site.slogan,
-    areaServed: "BR",
-    knowsAbout: [
-      "Cobrança condominial",
-      "Cobrança recorrente",
-      "Cobrança judicial",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: site.url,
+        name: site.name,
+        description: site.description,
+        inLanguage: site.language,
+        publisher: { "@id": organizationId },
+      },
+      {
+        "@type": "Organization",
+        "@id": organizationId,
+        name: site.name,
+        url: site.url,
+        description: site.description,
+        slogan: site.slogan,
+        logo: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/brand/logo.png"),
+          width: 932,
+          height: 196,
+        },
+        image: absoluteUrl("/brand/logo.png"),
+        areaServed: {
+          "@type": "Country",
+          name: "Brasil",
+        },
+        knowsAbout: [
+          "Cobrança condominial",
+          "Cobrança recorrente",
+          "Cobrança judicial",
+        ],
+        sameAs: socialLinks.map((item) => item.href),
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Cobrança para condomínios",
+          itemListElement: services.map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: service.title,
+              description: service.summary,
+              url: absoluteUrl(service.href),
+              areaServed: "BR",
+              provider: { "@id": organizationId },
+            },
+          })),
+        },
+        affiliation: {
+          "@type": "Organization",
+          name: advisor.name,
+          alternateName: advisor.alternateName,
+          description: advisor.description,
+          url: advisor.url,
+          logo: absoluteUrl(advisor.logo),
+        },
+      },
     ],
   };
 }
@@ -60,6 +112,7 @@ export function serviceJsonLd(service: {
     serviceType: "Cobrança condominial",
     areaServed: "BR",
     provider: {
+      "@id": organizationId,
       "@type": "Organization",
       name: site.name,
       url: site.url,
