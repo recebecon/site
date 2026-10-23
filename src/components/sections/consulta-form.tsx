@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import Link from "next/link";
 import { submitConsulta } from "@/app/actions/consulta";
 import { Button } from "@/design-system/ui/button";
 import { consultaInitialState } from "@/lib/consulta";
@@ -76,6 +77,13 @@ export function ConsultaForm({ compact = false }: { compact?: boolean }) {
         <Button type="submit" disabled={pending} className="w-full">
           {pending ? "Consultando…" : "Consultar pendências"}
         </Button>
+        <p className="text-sm leading-6 text-muted">
+          O documento serve só para esta consulta e não fica gravado no navegador.{" "}
+          <Link href="/privacidade" className="font-semibold text-accent underline-offset-4 hover:underline">
+            Política de Privacidade
+          </Link>
+          .
+        </p>
       </form>
       <div
         id={statusId}

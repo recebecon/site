@@ -41,6 +41,7 @@ export function SiteFooter() {
           ))}
           <FooterLink href="/contato">Contato</FooterLink>
           <FooterLink href="/privacidade">Privacidade</FooterLink>
+          <FooterLink href="/cookies">Cookies</FooterLink>
         </FooterColumn>
       </Container>
       <Container className="flex flex-wrap items-center justify-between gap-4 border-t border-line py-6">

@@ -60,7 +60,13 @@ const pages: { href: string; title: string; summary: string }[] = [
     href: "/privacidade",
     title: "Privacidade",
     summary:
-      "Como a Recebecom trata os dados enviados no pedido de diagnóstico da cobrança condominial.",
+      "Controladora, bases da LGPD, direitos do titular e como pedir acesso, correção ou exclusão.",
+  },
+  {
+    href: "/cookies",
+    title: "Cookies",
+    summary:
+      "Cookie essencial do aviso da LGPD. O site não usa cookie de anúncio.",
   },
 ];
 

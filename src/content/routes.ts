@@ -26,4 +26,5 @@ export const indexablePaths: IndexablePath[] = [
   { href: "/sobre", changeFrequency: "yearly", priority: 0.6 },
   { href: "/contato", changeFrequency: "yearly", priority: 0.6 },
   { href: "/privacidade", changeFrequency: "yearly", priority: 0.3 },
+  { href: "/cookies", changeFrequency: "yearly", priority: 0.3 },
 ];

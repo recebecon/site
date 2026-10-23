@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import Link from "next/link";
 import { submitContact } from "@/app/actions/contact";
 import { segments } from "@/content/segments";
 import { Button } from "@/design-system/ui/button";
@@ -179,6 +180,14 @@ function ContactFormSession({ onAnother }: { onAnother: () => void }) {
       <Button type="submit" disabled={pending} className="w-full sm:w-fit">
         {pending ? "Enviando…" : "Enviar pedido"}
       </Button>
+      <p className="text-sm leading-6 text-muted">
+        Ao enviar, a Recebecom trata estes dados para responder o diagnóstico,
+        conforme a{" "}
+        <Link href="/privacidade" className="font-semibold text-accent underline-offset-4 hover:underline">
+          Política de Privacidade
+        </Link>
+        .
+      </p>
     </form>
   );
 }
