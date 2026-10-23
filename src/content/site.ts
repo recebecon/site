@@ -9,6 +9,14 @@ export const site = {
   copyrightYear: 2026,
 } as const;
 
+export const shareImage = {
+  path: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Recebecom. Cobrança recorrente e judicial para condomínios.",
+  type: "image/png",
+} as const;
+
 export const socialLinks = [
   {
     name: "Instagram",

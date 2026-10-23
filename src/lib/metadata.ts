@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { shareImage, site } from "@/content/site";
+
+const image = {
+  url: shareImage.path,
+  width: shareImage.width,
+  height: shareImage.height,
+  alt: shareImage.alt,
+  type: shareImage.type,
+};
 
 export function absoluteUrl(path: string) {
   return new URL(path, site.url).toString();
@@ -29,11 +37,13 @@ export function createMetadata({
       siteName: site.name,
       locale: site.locale,
       type: "website",
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: branded,
       description,
+      images: [image],
     },
   };
 }
