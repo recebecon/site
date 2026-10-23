@@ -1,9 +1,7 @@
 "use server";
 
-import { segments } from "@/content/segments";
 import type { ContactState } from "@/lib/contact";
-
-const roles = ["sindico", "administradora", "conselho", "outro"] as const;
+import { validateContact } from "@/lib/fields";
 
 export async function submitContact(
   _previous: ContactState,
@@ -26,24 +24,7 @@ export async function submitContact(
     message: read(formData, "message"),
   };
 
-  const fieldErrors: ContactState["fieldErrors"] = {};
-
-  if (input.name.length < 2) fieldErrors.name = "Informe o nome.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email)) {
-    fieldErrors.email = "Informe um e-mail válido.";
-  }
-  if (input.phone.replace(/\D/g, "").length < 10) {
-    fieldErrors.phone = "Informe um telefone com DDD.";
-  }
-  if (!roles.includes(input.role as (typeof roles)[number])) {
-    fieldErrors.role = "Escolha quem está pedindo o diagnóstico.";
-  }
-  if (!["indefinido", ...segments.map((segment) => segment.slug)].includes(input.segment)) {
-    fieldErrors.segment = "Escolha o tipo de condomínio.";
-  }
-  if (input.message.length < 12) {
-    fieldErrors.message = "Descreva a carteira em pelo menos uma frase.";
-  }
+  const fieldErrors = validateContact(input);
 
   if (Object.keys(fieldErrors).length > 0) {
     return {
@@ -59,7 +40,7 @@ export async function submitContact(
     return {
       status: "error",
       message:
-        "O pedido foi validado, mas o envio ainda não está ligado a um canal. Configure CONTACT_WEBHOOK_URL para receber os diagnósticos.",
+        "O pedido está correto, mas o envio ainda não está disponível. Tente de novo mais tarde.",
       fieldErrors: {},
     };
   }

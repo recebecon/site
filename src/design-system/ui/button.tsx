@@ -10,7 +10,7 @@ const variants = {
 } as const;
 
 const base =
-  "inline-flex h-12 items-center justify-center rounded-control px-5 text-base font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex h-12 items-center justify-center rounded-control px-5 text-base font-semibold transition-[transform,background-color,box-shadow,color] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(61,12,22,0.16)] active:translate-y-0 active:shadow-none disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:shadow-none motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
 type Variant = keyof typeof variants;
 
@@ -22,7 +22,7 @@ type Common = {
 
 type LinkProps = Common & {
   href: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 type ButtonProps = Common &
   ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
@@ -38,9 +38,14 @@ export function Button(props: LinkProps | ButtonProps) {
     );
   }
 
-  const domProps = { ...props };
+  const buttonProps = props as ButtonProps;
+  const { children, ...domProps } = buttonProps;
   delete domProps.variant;
   delete domProps.className;
 
-  return <button className={className} {...domProps} />;
+  return (
+    <button className={className} {...domProps}>
+      {children}
+    </button>
+  );
 }

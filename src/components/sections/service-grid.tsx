@@ -46,7 +46,7 @@ function ServiceCard({
   return (
     <article
       className={cx(
-        "flex flex-col rounded-card p-7 md:p-9",
+        "lift flex flex-col rounded-card p-7 md:p-9",
         emphasis ? "bg-inverse text-white" : "border border-line bg-white",
       )}
     >

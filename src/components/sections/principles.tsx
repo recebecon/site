@@ -32,7 +32,7 @@ export function Principles() {
       />
       <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {principles.map((item) => (
-          <li key={item.title} className="rounded-card border border-line bg-white p-5">
+          <li key={item.title} className="lift rounded-card border border-line bg-white p-5">
             <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
               {item.title}
             </h3>

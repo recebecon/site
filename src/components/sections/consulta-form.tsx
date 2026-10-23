@@ -4,50 +4,96 @@ import { useActionState, useState } from "react";
 import { submitConsulta } from "@/app/actions/consulta";
 import { Button } from "@/design-system/ui/button";
 import { consultaInitialState } from "@/lib/consulta";
-import { onlyDigits } from "@/lib/documents";
+import { documentError, documentFeedback, maskDocument } from "@/lib/documents";
 import { cx } from "@/lib/cx";
 
 export function ConsultaForm({ compact = false }: { compact?: boolean }) {
   const [state, action, pending] = useActionState(submitConsulta, consultaInitialState);
   const [documentValue, setDocumentValue] = useState("");
+  const [attempted, setAttempted] = useState(false);
+  const [response, setResponse] = useState(state);
+  const [stale, setStale] = useState(false);
+
+  if (state !== response) {
+    setResponse(state);
+    setStale(false);
+  }
+
+  const feedback = documentFeedback(documentValue);
+  const fieldId = compact ? "consulta-document-home" : "consulta-document";
+  const statusId = compact ? "consulta-status-home" : "consulta-status";
+  const hintId = compact ? "consulta-hint-home" : "consulta-hint";
+  const showError = attempted && !feedback.valid;
+  const serverMessage = stale ? "" : state.message;
+
+  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    const error = documentError(documentValue);
+    if (error) {
+      event.preventDefault();
+      setAttempted(true);
+    }
+  }
 
   return (
     <div>
-      <form action={action} className="grid gap-3">
-        <label htmlFor={compact ? "consulta-document-home" : "consulta-document"} className="text-sm font-semibold text-ink">
-          CPF ou CNPJ
+      <form action={action} className="grid gap-3" noValidate onSubmit={onSubmit} aria-busy={pending}>
+        <label htmlFor={fieldId} className="text-sm font-semibold text-ink">
+          CPF ou CNPJ do responsável
         </label>
         <input
-          id={compact ? "consulta-document-home" : "consulta-document"}
+          id={fieldId}
           name="document"
-          inputMode="numeric"
+          inputMode="text"
           autoComplete="off"
+          autoCapitalize="characters"
+          spellCheck={false}
           required
           value={documentValue}
-          placeholder="Digite o documento"
-          aria-invalid={state.status === "error"}
-          aria-describedby={state.message ? "consulta-status" : undefined}
-          onChange={(event) => setDocumentValue(maskDocument(event.target.value))}
-          className="h-12 w-full rounded-control border border-line bg-white px-4 text-base text-ink"
+          placeholder="000.000.000-00"
+          aria-invalid={
+            showError || feedback.tone === "error" || (!stale && state.status === "error")
+          }
+          aria-describedby={`${hintId} ${statusId}`}
+          onChange={(event) => {
+            setDocumentValue(maskDocument(event.target.value));
+            setStale(true);
+          }}
+          className={cx("field h-12 px-4 text-base", (showError || feedback.tone === "error") && "border-danger")}
         />
+        <p
+          id={hintId}
+          className={cx(
+            "text-sm leading-6",
+            showError || feedback.tone === "error"
+              ? "text-danger"
+              : feedback.tone === "ok"
+                ? "text-accent"
+                : "text-muted",
+          )}
+        >
+          {showError ? documentError(documentValue) : feedback.message}
+        </p>
         <Button type="submit" disabled={pending} className="w-full">
           {pending ? "Consultando…" : "Consultar pendências"}
         </Button>
       </form>
-      <p
-        id="consulta-status"
+      <div
+        id={statusId}
         aria-live="polite"
+        role={serverMessage && state.status === "error" ? "alert" : "status"}
         className={cx(
-          "mt-4 text-sm leading-6",
-          state.status === "error" ? "text-danger" : "text-ink",
-          !state.message && "sr-only",
+          "motion-rise mt-4 rounded-control border px-4 py-3 text-sm leading-6",
+          statusClass(state.status),
+          !serverMessage && "hidden",
         )}
       >
-        {state.message}
-        {state.documentLabel ? ` Documento consultado: ${state.documentLabel}.` : ""}
-      </p>
-      {state.status === "found" ? (
-        <ul className="mt-4 divide-y divide-line border-y border-line">
+        <p>{serverMessage}</p>
+        {state.documentLabel && !stale ? (
+          <p className="mt-1">Documento consultado: {state.documentLabel}.</p>
+        ) : null}
+      </div>
+      {state.status === "found" && !stale ? (
+        <ul className="motion-rise mt-4 divide-y divide-line border-y border-line">
           {state.items.map((item) => (
             <li key={`${item.condominium}-${item.unit}-${item.dueDate}-${item.amount}`} className="py-4">
               <p className="font-display text-xl font-semibold tracking-tight text-ink">
@@ -68,20 +114,9 @@ export function ConsultaForm({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function maskDocument(value: string) {
-  const digits = onlyDigits(value).slice(0, 14);
-  if (digits.length <= 11) return formatCpf(digits);
-
-  return digits
-    .replace(/^(\d{2})(\d)/, "$1.$2")
-    .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
-    .replace(/^(\d{2})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3/$4")
-    .replace(/(\d{4})(\d{1,2})$/, "$1-$2");
-}
-
-function formatCpf(digits: string) {
-  return digits
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+function statusClass(status: string) {
+  if (status === "error") return "border-danger bg-accent-soft text-danger";
+  if (status === "found") return "border-line bg-white text-ink";
+  if (status === "empty") return "border-line bg-white text-ink";
+  return "border-transparent";
 }

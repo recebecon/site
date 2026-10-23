@@ -9,12 +9,16 @@ import "./globals.css";
 
 const sans = Geist({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-geist-sans",
+  adjustFontFallback: true,
 });
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-display",
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {

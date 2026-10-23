@@ -29,7 +29,7 @@ export function HomeHero() {
             </Button>
           </div>
         </div>
-        <div className="rounded-card border border-line bg-paper p-6 md:p-8">
+        <div className="motion-rise rounded-card border border-line bg-paper p-6 md:p-8">
           <p className="text-sm font-semibold tracking-[0.14em] text-accent uppercase">
             Para o condômino
           </p>
@@ -37,7 +37,8 @@ export function HomeHero() {
             Consulte pendências no CPF ou CNPJ.
           </h2>
           <p className="mt-3 text-sm leading-6 text-muted">
-            Veja o que está em aberto no seu documento. A consulta é do responsável pela unidade.
+            Digite o documento de quem responde pela unidade. Se houver registro, a lista mostra
+            condomínio, unidade, valor e vencimento.
           </p>
           <div className="mt-6">
             <ConsultaForm compact />

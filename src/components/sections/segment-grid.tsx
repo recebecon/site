@@ -21,7 +21,7 @@ export function SegmentGrid({ heading = true }: { heading?: boolean }) {
             <li key={segment.slug}>
               <Link
                 href={segment.href}
-                className="block h-full rounded-card border border-line bg-white p-6 transition-colors hover:border-accent"
+                className="lift block h-full rounded-card border border-line bg-white p-6 hover:border-accent"
               >
                 <Title className="font-display text-2xl font-semibold tracking-tight text-ink">
                   {segment.title}

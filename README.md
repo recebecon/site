@@ -13,7 +13,7 @@ Copie `.env.example` para `.env.local` antes de publicar.
 
 - `NEXT_PUBLIC_SITE_URL` define canonical, Open Graph, sitemap e robots.
 - `CONTACT_WEBHOOK_URL` recebe o POST do formulário de diagnóstico. Sem essa variável, o formulário valida e informa que o canal ainda não está ligado.
-- `CONSULTA_API_URL` recebe o POST `{ "document": "somente digitos" }` da consulta de pendências. A resposta esperada é `{ "items": [{ "condominium", "unit", "description", "amount", "dueDate", "status" }] }`. `CONSULTA_API_TOKEN` vai no header `Authorization: Bearer`, quando existir. Sem a URL, a consulta valida o CPF ou CNPJ e informa que o canal ainda não está ligado.
+- `CONSULTA_API_URL` recebe o POST `{ "document": "CPF ou CNPJ sem pontuação" }` da consulta de pendências. CNPJ alfanumérico entra em maiúsculas. A resposta esperada é `{ "items": [{ "condominium", "unit", "description", "amount", "dueDate", "status" }] }`. `CONSULTA_API_TOKEN` vai no header `Authorization: Bearer`, quando existir. Sem a URL, a consulta valida o CPF ou CNPJ e informa que o canal ainda não está ligado.
 
 ## Onde cada coisa mora
 

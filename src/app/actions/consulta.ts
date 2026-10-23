@@ -1,18 +1,19 @@
 "use server";
 
-import { formatDocument, isValidDocument, onlyDigits } from "@/lib/documents";
+import { documentError, formatDocument, isValidDocument, normalizeDocument } from "@/lib/documents";
 import type { ConsultaState, Pendencia } from "@/lib/consulta";
 
 export async function submitConsulta(
   _previous: ConsultaState,
   formData: FormData,
 ): Promise<ConsultaState> {
-  const digits = onlyDigits(read(formData, "document"));
+  const document = normalizeDocument(read(formData, "document"));
+  const invalid = documentError(document);
 
-  if (!isValidDocument(digits)) {
+  if (invalid || !isValidDocument(document)) {
     return {
       status: "error",
-      message: "Informe um CPF ou CNPJ válido.",
+      message: invalid ?? "Informe um CPF ou CNPJ válido.",
       documentLabel: "",
       items: [],
     };
@@ -25,7 +26,7 @@ export async function submitConsulta(
       status: "error",
       message:
         "A consulta ainda não está ligada ao sistema de pendências. Tente de novo mais tarde ou fale com a administração do condomínio.",
-      documentLabel: formatDocument(digits),
+      documentLabel: formatDocument(document),
       items: [],
     };
   }
@@ -39,12 +40,12 @@ export async function submitConsulta(
     const response = await fetch(endpoint, {
       method: "POST",
       headers,
-      body: JSON.stringify({ document: digits }),
+      body: JSON.stringify({ document }),
       signal: AbortSignal.timeout(8000),
     });
 
     if (response.status === 404) {
-      return empty(digits);
+      return empty(document);
     }
 
     if (!response.ok) {
@@ -54,12 +55,12 @@ export async function submitConsulta(
     const payload: unknown = await response.json();
     const items = parseItems(payload);
 
-    if (items.length === 0) return empty(digits);
+    if (items.length === 0) return empty(document);
 
     return {
       status: "found",
       message: "Pendências encontradas para este documento.",
-      documentLabel: formatDocument(digits),
+      documentLabel: formatDocument(document),
       items,
     };
   } catch {
