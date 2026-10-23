@@ -281,7 +281,11 @@ function Select({
         aria-invalid={Boolean(error)}
         aria-describedby={hintId}
         onChange={(event) => onChange(event.target.value)}
-        className="field h-12 px-4 text-base"
+        className="field h-12 appearance-none bg-[length:1rem] bg-[position:right_0.9rem_center] bg-no-repeat px-4 pr-11 text-base"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%233d0c16' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E\")",
+        }}
       >
         <option value="" disabled>
           {placeholder}
