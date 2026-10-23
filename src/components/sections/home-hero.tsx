@@ -24,7 +24,7 @@ export function HomeHero() {
             <Button href={contactHref} className="w-full sm:w-auto">
               {contactLabel}
             </Button>
-            <Button href="/como-funciona" variant="secondary" className="w-full sm:w-auto">
+            <Button href="#como-funciona" variant="secondary" className="w-full sm:w-auto">
               Ver como funciona
             </Button>
           </div>

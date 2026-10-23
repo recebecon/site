@@ -18,7 +18,11 @@ export function Section({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cx("py-16 md:py-24", tone === "paper" && "bg-paper", className)}
+      className={cx(
+        "py-16 md:py-24",
+        tone === "paper" && "bg-paper",
+        className,
+      )}
     >
       <Container>{children}</Container>
     </section>

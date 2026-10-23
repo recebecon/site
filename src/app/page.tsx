@@ -19,7 +19,7 @@ export default function HomePage() {
       <Principles />
       <ServiceGrid />
       <SegmentGrid />
-      <ProcessSteps />
+      <ProcessSteps id="como-funciona" />
       <section className="bg-paper py-16 md:py-24" aria-labelledby="faq-titulo">
         <Container>
           <SectionHeading

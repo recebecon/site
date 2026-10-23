@@ -6,4 +6,23 @@ export const site = {
   locale: "pt_BR",
   language: "pt-BR",
   slogan: "Cobrança que gera resultados.",
+  copyrightYear: 2026,
 } as const;
+
+export const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/recebecom",
+    label: "Instagram da Recebecom",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/recebecom",
+    label: "LinkedIn da Recebecom",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/recebecom",
+    label: "Facebook da Recebecom",
+  },
+] as const;

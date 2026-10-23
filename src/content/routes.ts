@@ -10,6 +10,7 @@ export type IndexablePath = {
 export const indexablePaths: IndexablePath[] = [
   { href: "/", changeFrequency: "monthly", priority: 1 },
   { href: "/consultar", changeFrequency: "monthly", priority: 0.9 },
+  { href: "/servicos", changeFrequency: "monthly", priority: 0.8 },
   ...services.map((service) => ({
     href: service.href,
     changeFrequency: "monthly" as const,

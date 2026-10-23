@@ -31,6 +31,14 @@ export function Button(props: LinkProps | ButtonProps) {
   const className = cx(base, variants[props.variant ?? "primary"], props.className);
 
   if ("href" in props && props.href) {
+    if (props.href.startsWith("#")) {
+      return (
+        <a href={props.href} className={className} onClick={props.onClick}>
+          {props.children}
+        </a>
+      );
+    }
+
     return (
       <Link href={props.href} className={className} onClick={props.onClick}>
         {props.children}

@@ -1,9 +1,15 @@
 import { processSteps } from "@/content/process";
 import { Section, SectionHeading } from "@/design-system/ui/section";
 
-export function ProcessSteps({ heading = true }: { heading?: boolean }) {
+export function ProcessSteps({
+  heading = true,
+  id,
+}: {
+  heading?: boolean;
+  id?: string;
+}) {
   return (
-    <Section labelledBy={heading ? "processo-titulo" : undefined}>
+    <Section id={id} labelledBy={heading ? "processo-titulo" : undefined}>
       {heading ? (
         <SectionHeading
           id="processo-titulo"
