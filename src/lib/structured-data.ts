@@ -1,4 +1,4 @@
-import { advisor, site, socialLinks } from "@/content/site";
+import { site, socialLinks } from "@/content/site";
 import { services } from "@/content/services";
 import { absoluteUrl } from "@/lib/metadata";
 
@@ -56,14 +56,6 @@ export function siteJsonLd() {
               provider: { "@id": organizationId },
             },
           })),
-        },
-        affiliation: {
-          "@type": "Organization",
-          name: advisor.name,
-          alternateName: advisor.alternateName,
-          description: advisor.description,
-          url: advisor.url,
-          logo: absoluteUrl(advisor.logo),
         },
       },
     ],

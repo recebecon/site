@@ -1,8 +1,18 @@
+function resolveSiteUrl() {
+  const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (productionHost) return `https://${productionHost}`;
+
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (configured) return configured;
+
+  return "https://recebecom.com.br";
+}
+
 export const site = {
   name: "Recebecom",
   description:
     "Cobrança recorrente e cobrança judicial para condomínios residenciais, corporativos, galpões industriais e outros empreendimentos.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://recebecom.com.br",
+  url: resolveSiteUrl(),
   locale: "pt_BR",
   language: "pt-BR",
   slogan: "Cobrança que gera resultados.",
@@ -10,11 +20,11 @@ export const site = {
 } as const;
 
 export const shareImage = {
-  path: "/opengraph-image",
+  path: "/og.jpg",
   width: 1200,
   height: 630,
   alt: "Recebecom. Cobrança recorrente e judicial para condomínios.",
-  type: "image/png",
+  type: "image/jpeg",
 } as const;
 
 export const socialLinks = [
@@ -34,13 +44,3 @@ export const socialLinks = [
     label: "Facebook da Recebecom",
   },
 ] as const;
-
-export const advisor = {
-  name: "Grupo Ferreira França",
-  alternateName: "Ferreira França Advocacia e Assessoria Empresarial",
-  description: "Advocacia e Assessoria Empresarial",
-  url: "https://grupoferreirafranca.com.br/",
-  logo: "/brand/ferreira-franca.png",
-  logoWidth: 640,
-  logoHeight: 89,
-} as const;

@@ -1,10 +1,9 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { primaryNav } from "@/content/navigation";
 import { segments } from "@/content/segments";
 import { services } from "@/content/services";
-import { advisor, site, socialLinks } from "@/content/site";
+import { site, socialLinks } from "@/content/site";
 import { Container } from "@/design-system/ui/container";
 import { Logo } from "@/design-system/ui/logo";
 
@@ -44,28 +43,6 @@ export function SiteFooter() {
           <FooterLink href="/privacidade">Privacidade</FooterLink>
         </FooterColumn>
       </Container>
-      <div className="border-t border-line">
-        <Container className="flex justify-center py-8">
-          <a
-            href={advisor.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex max-w-sm flex-col items-center gap-3 text-center"
-          >
-            <p className="text-sm text-muted transition-colors duration-200 group-hover:text-accent">
-              Assessorada pelo Grupo Ferreira França
-            </p>
-            <Image
-              src={advisor.logo}
-              alt="Ferreira França. Advocacia e Assessoria Empresarial."
-              width={advisor.logoWidth}
-              height={advisor.logoHeight}
-              sizes="280px"
-              className="h-9 w-auto sm:h-11"
-            />
-          </a>
-        </Container>
-      </div>
       <Container className="flex flex-wrap items-center justify-between gap-4 border-t border-line py-6">
         <p className="text-sm text-muted">
           © {site.copyrightYear} Recebecom. Cobrança para condomínios.

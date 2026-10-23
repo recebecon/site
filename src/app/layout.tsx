@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, Geist } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
-import { site } from "@/content/site";
+import { shareImage, site } from "@/content/site";
 import { siteJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -37,11 +37,29 @@ export const metadata: Metadata = {
     title: "Recebecom | Cobrança recorrente e judicial para condomínios",
     description: site.description,
     url: site.url,
+    images: [
+      {
+        url: shareImage.path,
+        width: shareImage.width,
+        height: shareImage.height,
+        alt: shareImage.alt,
+        type: shareImage.type,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Recebecom | Cobrança recorrente e judicial para condomínios",
     description: site.description,
+    images: [
+      {
+        url: shareImage.path,
+        width: shareImage.width,
+        height: shareImage.height,
+        alt: shareImage.alt,
+        type: shareImage.type,
+      },
+    ],
   },
   robots: {
     index: true,
