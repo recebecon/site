@@ -1,0 +1,14 @@
+---
+description: Ordem de trabalho do agente neste repositório Recebecom
+alwaysApply: true
+---
+
+# Harness
+
+Antes de implementar, leia `.cursor/harness/operating.md`, o contexto em `.cursor/context/` e a spec em `.cursor/specs/` da área tocada.
+
+Carregue a skill em `.cursor/skills/` quando a tarefa for de UI, SEO, marketing, Next.js, design system, frontend ou transição.
+
+Next.js deste repo difere do treinamento. Leia o guia em `node_modules/next/dist/docs/` antes de escrever código de framework.
+
+Verifique fluxo de interface no navegador antes de encerrar. Não invente fato comercial, jurídico ou de contato.

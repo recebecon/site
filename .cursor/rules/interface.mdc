@@ -1,0 +1,17 @@
+---
+description: Interface, contraste, movimento e verificação visual
+globs: src/**/*.tsx
+alwaysApply: false
+---
+
+# Interface
+
+Campo com borda de 2px na cor ink, fundo branco e placeholder na cor muted. Contraste vale para todo input, select e mensagem de erro.
+
+Scroll suave vem de `html { scroll-behavior: smooth; scroll-padding-top: 5.5rem }`. Seção âncora não soma `scroll-mt` com esse padding.
+
+`prefers-reduced-motion` zera animação e deixa o scroll em `auto`.
+
+Faixa fixa, como o aceite de termos, não empurra o rodapé. Fundo com branco semitransparente e `backdrop-blur-sm`.
+
+Depois de mudar UI, exercite o fluxo no navegador: clique, envio, navegação e o estado vazio ou de erro que a mudança toca.

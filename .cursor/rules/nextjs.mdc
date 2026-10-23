@@ -1,0 +1,17 @@
+---
+description: Restrições do Next.js 16 com cacheComponents neste site
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Next.js 16
+
+Leia `node_modules/next/dist/docs/` antes de usar API de metadata, cache, rota ou fonte.
+
+- `cacheComponents` está ligado. Sem `new Date()` no prerender. O ano de copyright é o valor estático em `site.copyrightYear`.
+- `usePathname` fica dentro de `Suspense`.
+- Params de página são Promise.
+- Estado inicial de server action mora fora do arquivo `"use server"`.
+- Sincronizar resposta do servidor com estado do cliente ocorre no render quando a identidade do estado muda, sem `setState` dentro de `useEffect`.
+- Portal no cliente usa `useSyncExternalStore` para saber se montou.
+- Link para âncora da mesma página é `<a href="#id">`. `next/link` não preserva o scroll suave.

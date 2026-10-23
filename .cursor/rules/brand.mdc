@@ -1,0 +1,14 @@
+---
+description: Marca, tom e dados que não podem ser inventados
+alwaysApply: true
+---
+
+# Marca e fatos
+
+Use os tokens de `src/design-system/tokens.css`. Bordô `#6B1126` em botão; vinho `#3D0C16` em texto e hover. Texto branco em botão bordô. Sem bordô sobre vinho.
+
+Copy em pt-BR, direta, para quem administra condomínio. A consulta é do condômino.
+
+Não invente telefone, endereço, CNPJ, depoimento, número de resultado ou URL oficial de rede social. Os perfis em `src/content/site.ts` só mudam quando o usuário passar o endereço confirmado.
+
+Não afirme que a Recebecom é escritório de advocacia.
