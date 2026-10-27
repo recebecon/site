@@ -5,13 +5,13 @@ import { cx } from "@/lib/cx";
 
 export function SegmentGrid({ heading = true }: { heading?: boolean }) {
   return (
-    <Section tone="paper" labelledBy={heading ? "segmentos-titulo" : undefined}>
+    <Section labelledBy={heading ? "segmentos-titulo" : undefined}>
       {heading ? (
         <SectionHeading
           id="segmentos-titulo"
           eyebrow="Segmentos"
-          title="Residencial, corporativo, galpão e o que ficar de fora dessa lista."
-          description="A taxa condominial muda de valor e de convivência. O método de cobrança parte do tipo de empreendimento."
+          title="Cada condomínio pede um jeito de cobrar."
+          description="Residencial, corporativo, galpão ou o que ficar fora dessa lista."
         />
       ) : null}
       <ul
@@ -29,10 +29,10 @@ export function SegmentGrid({ heading = true }: { heading?: boolean }) {
                 href={segment.href}
                 className="lift block h-full rounded-card border border-line bg-white p-5 sm:p-6 hover:border-accent"
               >
-                <Title className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+                <Title className="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl">
                   {segment.title}
                 </Title>
-                <p className="mt-2 text-sm leading-6 text-muted sm:text-base sm:leading-7">
+                <p className="mt-1.5 text-sm leading-6 text-muted sm:mt-2">
                   {segment.summary}
                 </p>
               </Link>

@@ -11,7 +11,7 @@ function resolveSiteUrl() {
 export const site = {
   name: "Recebecom",
   description:
-    "Cobrança recorrente e cobrança judicial para condomínios residenciais, corporativos, galpões industriais e outros empreendimentos.",
+    "Cobrança da taxa condominial com régua no ciclo do mês e via judicial quando o acordo não fecha. Para síndicos e administradoras.",
   url: resolveSiteUrl(),
   locale: "pt_BR",
   language: "pt-BR",

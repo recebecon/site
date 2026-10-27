@@ -14,8 +14,8 @@ export function ProcessSteps({
         <SectionHeading
           id="processo-titulo"
           eyebrow="Como funciona"
-          title="Do diagnóstico à via judicial, sem pular etapa."
-          description="Cada condomínio entra pelo mesmo caminho. A régua e o processo só avançam com o que a carteira mostrar."
+          title="Do diagnóstico à via judicial."
+          description="Mesmo caminho para todo condomínio. A carteira dita o ritmo."
         />
       ) : null}
       <ol
@@ -33,13 +33,13 @@ export function ProcessSteps({
               <span className="flex h-12 w-12 items-center justify-center rounded-control bg-accent-soft text-accent sm:h-14 sm:w-14">
                 <ProcessIcon name={step.icon} />
               </span>
-              <p className="mt-4 font-display text-sm font-semibold tracking-[0.16em] text-accent sm:mt-5">
+              <p className="mt-3.5 font-display text-xs font-semibold tracking-[0.16em] text-accent sm:mt-4 sm:text-sm">
                 {step.number}
               </p>
-              <Title className="mt-2 font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+              <Title className="mt-1.5 font-display text-lg font-semibold tracking-tight text-ink sm:mt-2 sm:text-xl">
                 {step.title}
               </Title>
-              <p className="mt-2 text-sm leading-6 text-muted">{step.description}</p>
+              <p className="mt-1.5 text-sm leading-6 text-muted sm:mt-2">{step.description}</p>
             </li>
           );
         })}

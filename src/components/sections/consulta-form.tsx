@@ -35,11 +35,18 @@ export function ConsultaForm({ compact = false }: { compact?: boolean }) {
     }
   }
 
+  const hintVisible = showError || feedback.tone !== "idle" || !compact;
+  const hintText = showError
+    ? documentError(documentValue)
+    : compact && feedback.tone === "idle"
+      ? ""
+      : feedback.message;
+
   return (
     <div>
       <form action={action} className="grid gap-3" noValidate onSubmit={onSubmit} aria-busy={pending}>
         <label htmlFor={fieldId} className="text-sm font-semibold text-ink">
-          CPF ou CNPJ do responsável
+          CPF ou CNPJ
         </label>
         <input
           id={fieldId}
@@ -65,6 +72,7 @@ export function ConsultaForm({ compact = false }: { compact?: boolean }) {
           id={hintId}
           className={cx(
             "text-sm leading-6",
+            !hintVisible || !hintText ? "sr-only" : null,
             showError || feedback.tone === "error"
               ? "text-danger"
               : feedback.tone === "ok"
@@ -72,18 +80,27 @@ export function ConsultaForm({ compact = false }: { compact?: boolean }) {
                 : "text-muted",
           )}
         >
-          {showError ? documentError(documentValue) : feedback.message}
+          {hintText || "Informe o CPF ou CNPJ do responsável."}
         </p>
         <Button type="submit" disabled={pending} className="w-full">
           {pending ? "Verificando…" : "Verificar pendências"}
         </Button>
-        <p className="text-sm leading-6 text-muted">
-          O documento serve só para verificar a unidade e não fica gravado no navegador.{" "}
-          <Link href="/privacidade" className="font-semibold text-accent underline-offset-4 hover:underline">
-            Política de Privacidade
-          </Link>
-          .
-        </p>
+        {compact ? (
+          <p className="text-xs leading-5 text-muted">
+            Não gravamos o documento.{" "}
+            <Link href="/privacidade" className="font-semibold text-accent underline-offset-4 hover:underline">
+              Privacidade
+            </Link>
+          </p>
+        ) : (
+          <p className="text-sm leading-6 text-muted">
+            O documento serve só para verificar a unidade e não fica gravado no navegador.{" "}
+            <Link href="/privacidade" className="font-semibold text-accent underline-offset-4 hover:underline">
+              Política de Privacidade
+            </Link>
+            .
+          </p>
+        )}
       </form>
       <div
         id={statusId}

@@ -183,7 +183,7 @@ export function MobileNav() {
       <button
         ref={toggleRef}
         type="button"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-control text-ink transition-colors hover:bg-paper active:scale-95 motion-reduce:transform-none"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-paper active:scale-95 motion-reduce:transform-none"
         aria-expanded={open}
         aria-controls="menu-mobile"
         aria-label="Abrir menu"

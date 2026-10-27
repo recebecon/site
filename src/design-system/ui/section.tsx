@@ -43,18 +43,18 @@ export function SectionHeading({
   return (
     <div className="max-w-2xl">
       {eyebrow ? (
-        <p className="text-sm font-semibold tracking-[0.14em] text-accent uppercase">
+        <p className="text-xs font-semibold tracking-[0.14em] text-accent uppercase sm:text-sm">
           {eyebrow}
         </p>
       ) : null}
       <h2
         id={id}
-        className="mt-3 font-display text-[clamp(1.6rem,3.2vw,2.75rem)] font-semibold leading-tight tracking-tight text-ink"
+        className="mt-2.5 font-display text-[clamp(1.35rem,2.6vw,2.15rem)] font-semibold leading-tight tracking-tight text-ink sm:mt-3"
       >
         {title}
       </h2>
       {description ? (
-        <p className="mt-3 max-w-2xl text-base leading-7 text-muted sm:mt-4 sm:text-lg sm:leading-8">
+        <p className="mt-2.5 max-w-2xl text-sm leading-6 text-muted sm:mt-3 sm:text-base sm:leading-7">
           {description}
         </p>
       ) : null}

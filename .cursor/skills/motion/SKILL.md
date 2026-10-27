@@ -9,7 +9,7 @@ Leia os tokens e `src/app/globals.css` antes de acrescentar movimento.
 
 ## Scroll
 
-`html` tem `scroll-behavior: smooth` e `scroll-padding-top: 5.5rem`. CTA para seção da mesma página usa `<a href="#id">` via `Button` quando `href` começa com `#`. Não adicione `scroll-mt` na seção: o padding do `html` já compensa o header.
+`html` tem `scroll-behavior: smooth` e `scroll-padding-top: 6.5rem`. CTA para seção da mesma página usa `<a href="#id">` via `Button` quando `href` começa com `#`. Não adicione `scroll-mt` na seção: o padding do `html` já compensa o header.
 
 ## Componentes
 
@@ -17,7 +17,7 @@ Transição curta, 200ms, em cor, fundo e sombra. Hover de botão sobe 2px e gan
 
 Faixa fixa usa `bg-white/80`, `backdrop-blur-sm` e `supports-[backdrop-filter]:bg-white/70`. Ela não reserva altura no fluxo e não empurra o rodapé.
 
-O header começa transparente. Com a classe `is-scrolled` (após 8px de rolagem, via `HeaderScroll`), o CSS em `globals.css` aplica fundo branco semitransparente, borda, sombra e blur.
+O header é uma cápsula flutuante (`rounded-[100px]`, fundo branco, sombra). Com a classe `is-scrolled` (após 8px de rolagem, via `HeaderScroll`), o CSS em `globals.css` reforça borda, sombra e blur. O CTA do header também usa `rounded-[100px]`.
 
 ## Redução
 

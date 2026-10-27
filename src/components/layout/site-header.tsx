@@ -2,35 +2,42 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { contactHref, contactLabel, primaryNav } from "@/content/navigation";
 import { Button } from "@/design-system/ui/button";
-import { Container } from "@/design-system/ui/container";
 import { Logo } from "@/design-system/ui/logo";
 import { HeaderScroll } from "@/components/layout/header-scroll";
 import { MobileNav, MobileNavFallback } from "@/components/layout/mobile-nav";
 
 export function SiteHeader() {
   return (
-    <header data-site-header="" className="sticky top-0 z-30 border-b">
+    <header className="sticky top-0 z-30 px-3 pt-3 sm:px-5 sm:pt-4 md:px-8">
       <HeaderScroll />
-      <Container className="flex h-20 items-center justify-between gap-4">
+      <div
+        data-site-header=""
+        className="mx-auto flex h-[3.75rem] w-full max-w-6xl items-center gap-4 rounded-[100px] border border-transparent bg-white px-4 shadow-[0_6px_24px_rgba(61,12,22,0.1)] sm:h-[4.25rem] sm:gap-6 sm:px-5 lg:gap-8 lg:px-8 lg:pr-3"
+      >
         <Logo priority />
-        <nav aria-label="Principal" className="hidden items-center gap-4 lg:flex xl:gap-7">
+        <nav aria-label="Principal" className="hidden items-center gap-7 lg:flex">
           {primaryNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-sm font-medium text-ink transition-colors duration-200 hover:text-accent"
+              className="whitespace-nowrap text-[15px] font-medium text-ink/80 transition-colors duration-200 hover:text-accent"
             >
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden lg:block">
-          <Button href={contactHref}>{contactLabel}</Button>
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
+          <Button
+            href={contactHref}
+            className="hidden h-11 !rounded-[100px] px-6 text-[15px] lg:inline-flex"
+          >
+            {contactLabel}
+          </Button>
+          <Suspense fallback={<MobileNavFallback />}>
+            <MobileNav />
+          </Suspense>
         </div>
-        <Suspense fallback={<MobileNavFallback />}>
-          <MobileNav />
-        </Suspense>
-      </Container>
+      </div>
     </header>
   );
 }

@@ -1,19 +1,31 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { primaryNav } from "@/content/navigation";
+import { consultHref, contactHref } from "@/content/navigation";
 import { segments } from "@/content/segments";
 import { services } from "@/content/services";
 import { company, site, socialLinks } from "@/content/site";
 import { Container } from "@/design-system/ui/container";
 import { Logo } from "@/design-system/ui/logo";
 
+const companyLinks = [
+  { href: consultHref, label: "Moradores" },
+  { href: "/como-funciona", label: "Como funciona" },
+  { href: "/sobre", label: "Sobre" },
+  { href: contactHref, label: "Contato" },
+] as const;
+
+const legalLinks = [
+  { href: "/privacidade", label: "Privacidade" },
+  { href: "/cookies", label: "Cookies" },
+] as const;
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-paper text-ink">
-      <Container className="grid gap-8 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:py-16">
+      <Container className="grid gap-10 py-12 sm:py-14 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1fr] lg:gap-12 lg:py-16">
         <div>
           <Logo />
-          <p className="mt-4 max-w-xs text-sm leading-6 text-muted">
+          <p className="mt-5 max-w-sm text-base leading-7 text-muted">
             Cobrança recorrente e judicial para condomínios. A conversa é com
             síndico, administradora e conselho.
           </p>
@@ -32,20 +44,18 @@ export function SiteFooter() {
               {segment.title}
             </FooterLink>
           ))}
+          <FooterLink href="/segmentos">Todos os segmentos</FooterLink>
         </FooterColumn>
-        <FooterColumn title="Empresa">
-          {primaryNav.map((item) => (
+        <FooterColumn title="Recebecom">
+          {companyLinks.map((item) => (
             <FooterLink key={item.href} href={item.href}>
               {item.label}
             </FooterLink>
           ))}
-          <FooterLink href="/contato">Contato</FooterLink>
-          <FooterLink href="/privacidade">Privacidade</FooterLink>
-          <FooterLink href="/cookies">Cookies</FooterLink>
         </FooterColumn>
       </Container>
-      <Container className="flex flex-wrap items-center justify-between gap-4 border-t border-line py-6">
-        <div className="space-y-1 text-sm text-muted">
+      <Container className="flex flex-col gap-5 border-t border-line py-6 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
+        <div className="space-y-1.5 text-sm leading-6 text-muted">
           <p>
             © {site.copyrightYear} {company.tradeName}. Cobrança para condomínios.
           </p>
@@ -53,8 +63,20 @@ export function SiteFooter() {
             {company.legalName} · CNPJ {company.cnpj} · {company.city},{" "}
             {company.state}
           </p>
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
+            {legalLinks.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-sm text-muted underline-offset-4 transition-colors duration-200 hover:text-accent hover:underline"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="ml-auto flex items-center gap-1">
+        <ul className="flex items-center gap-1 sm:ml-auto">
           {socialLinks.map((item) => (
             <li key={item.name}>
               <a
@@ -105,10 +127,10 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="text-sm font-semibold tracking-[0.12em] text-ink uppercase">
+      <p className="text-xs font-semibold tracking-[0.14em] text-ink uppercase">
         {title}
       </p>
-      <ul className="mt-4 space-y-2">{children}</ul>
+      <ul className="mt-4 space-y-2.5">{children}</ul>
     </div>
   );
 }
@@ -118,7 +140,7 @@ function FooterLink({ href, children }: { href: string; children: ReactNode }) {
     <li>
       <Link
         href={href}
-        className="text-sm text-muted transition-colors duration-200 hover:text-accent"
+        className="text-base leading-7 text-muted transition-colors duration-200 hover:text-accent"
       >
         {children}
       </Link>

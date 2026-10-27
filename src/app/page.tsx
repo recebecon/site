@@ -4,8 +4,10 @@ import { FaqList } from "@/components/sections/faq-list";
 import { HomeHero } from "@/components/sections/home-hero";
 import { Principles } from "@/components/sections/principles";
 import { ProcessSteps } from "@/components/sections/process-steps";
+import { ReguaSpotlight } from "@/components/sections/regua-spotlight";
 import { SegmentGrid } from "@/components/sections/segment-grid";
 import { ServiceGrid } from "@/components/sections/service-grid";
+import { Testimonials } from "@/components/sections/testimonials";
 import { faqs } from "@/content/faq";
 import { Container } from "@/design-system/ui/container";
 import { SectionHeading } from "@/design-system/ui/section";
@@ -17,7 +19,8 @@ export default function HomePage() {
       <JsonLd data={faqJsonLd(faqs)} />
       <HomeHero />
       <Principles />
-      <ServiceGrid />
+      <ReguaSpotlight />
+      <ServiceGrid tone="paper" />
       <SegmentGrid />
       <ProcessSteps id="como-funciona" />
       <section className="bg-paper py-10 sm:py-12 md:py-16 lg:py-20" aria-labelledby="faq-titulo">
@@ -26,7 +29,7 @@ export default function HomePage() {
             id="faq-titulo"
             eyebrow="Dúvidas"
             title="Perguntas de quem administra."
-            description="Respostas diretas sobre o papel da Recebecom, a régua e a via judicial."
+            description="Respostas curtas sobre a régua e a via judicial."
           />
           <div className="mt-6 sm:mt-8 md:mt-10">
             <FaqList />
@@ -34,6 +37,7 @@ export default function HomePage() {
         </Container>
       </section>
       <CtaBand />
+      <Testimonials />
     </>
   );
 }

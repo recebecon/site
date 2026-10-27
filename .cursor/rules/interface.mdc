@@ -8,12 +8,12 @@ alwaysApply: false
 
 Campo com borda de 2px na cor ink, fundo branco e placeholder na cor muted. Contraste vale para todo input, select e mensagem de erro.
 
-Scroll suave vem de `html { scroll-behavior: smooth; scroll-padding-top: 5.5rem }`. Seção âncora não soma `scroll-mt` com esse padding.
+Scroll suave vem de `html { scroll-behavior: smooth; scroll-padding-top: 6.5rem }`. Seção âncora não soma `scroll-mt` com esse padding.
 
 `prefers-reduced-motion` zera animação e deixa o scroll em `auto`.
 
 Faixa fixa, como o aceite de termos, não empurra o rodapé. Fundo com branco semitransparente e `backdrop-blur-sm`.
 
-O header começa transparente. Com a classe `is-scrolled` (após 8px, via `HeaderScroll`), o CSS em `globals.css` aplica fundo branco semitransparente, borda, sombra e blur.
+O header é uma barra flutuante com `border-radius: 100px`, fundo branco e sombra. Com a classe `is-scrolled` (após 8px, via `HeaderScroll`), o CSS em `globals.css` reforça borda, sombra e blur.
 
 Depois de mudar UI, exercite o fluxo no navegador: clique, envio, navegação e o estado vazio ou de erro que a mudança toca.

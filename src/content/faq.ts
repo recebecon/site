@@ -2,36 +2,36 @@ export const faqs = [
   {
     question: "A Recebecom substitui a administradora?",
     answer:
-      "Não. A administradora segue com a gestão do condomínio. A Recebecom entra na cobrança da taxa: a régua recorrente e, quando necessário, a via judicial.",
+      "Não. A administradora segue na gestão. A Recebecom entra na cobrança da taxa — recorrente e, se precisar, judicial.",
   },
   {
-    question: "Qual é a diferença entre cobrança recorrente e judicial?",
+    question: "Qual a diferença entre recorrente e judicial?",
     answer:
-      "A recorrente atua no ciclo da taxa, do vencimento ao acordo. A judicial começa quando essa via não recupera o débito e o caso precisa de um caminho formal.",
+      "A recorrente cuida do ciclo do mês. A judicial entra quando essa via não recupera o débito.",
   },
   {
-    question: "Quais condomínios a Recebecom atende?",
+    question: "Quais condomínios vocês atendem?",
     answer:
-      "Residenciais, corporativos, galpões industriais e outros empreendimentos que vivem da taxa condominial. O diagnóstico parte da carteira, não de um único tipo de prédio.",
+      "Residenciais, corporativos, galpões e outros que vivem da taxa. O diagnóstico parte da carteira.",
   },
   {
     question: "Todo atraso vira processo?",
     answer:
-      "Não. A via judicial é para o débito que já passou pela cobrança amigável. Valor, tempo em aberto e o histórico da cobrança entram nessa decisão.",
+      "Não. A via judicial é para o débito que já passou pela cobrança amigável.",
   },
   {
-    question: "Quem é o cliente da Recebecom?",
+    question: "Quem é o cliente?",
     answer:
-      "Síndico, administradora e conselho. A conversa é com quem responde pelo caixa do condomínio, não com o morador como se ele fosse o contratante.",
+      "Síndico, administradora e conselho — quem responde pelo caixa, não o morador como contratante.",
   },
   {
-    question: "O morador consegue ver o que está em aberto?",
+    question: "O morador vê o que está em aberto?",
     answer:
-      "Sim. Em Moradores, o CPF ou CNPJ do responsável mostra as pendências da unidade registradas na Recebecom para aquele documento.",
+      "Sim. Em Moradores, o CPF ou CNPJ mostra as pendências da unidade registradas na Recebecom.",
   },
   {
-    question: "Como começa um diagnóstico?",
+    question: "Como começa o diagnóstico?",
     answer:
-      "Pelo formulário de contato, com o perfil de quem administra e o tipo de condomínio. A partir disso a equipe olha a carteira antes de propor régua ou via judicial.",
+      "Pelo formulário de contato, com o perfil de quem administra e o tipo de condomínio.",
   },
 ] as const;

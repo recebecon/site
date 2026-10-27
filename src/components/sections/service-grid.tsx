@@ -5,20 +5,22 @@ import { cx } from "@/lib/cx";
 
 export function ServiceGrid({
   heading = true,
+  tone = "default",
 }: {
   heading?: boolean;
+  tone?: "default" | "paper";
 }) {
   return (
-    <Section labelledBy={heading ? "servicos-titulo" : undefined}>
+    <Section tone={tone} labelledBy={heading ? "servicos-titulo" : undefined}>
       {heading ? (
         <SectionHeading
           id="servicos-titulo"
-          eyebrow="Serviços"
-          title="Duas cobranças. O mesmo condomínio."
-          description="A taxa deste mês e o débito que já envelheceu não se resolvem do mesmo jeito. A Recebecom separa as frentes e mantém as duas visíveis para a administração."
+          eyebrow="Soluções"
+          title="Duas cobranças. Um condomínio."
+          description="A taxa do mês e o débito antigo pedem caminhos diferentes."
         />
       ) : null}
-      <div className={cx("grid gap-3 sm:gap-4 md:grid-cols-2", heading && "mt-6 sm:mt-8 lg:mt-10")}>
+      <div className={cx("grid gap-3 sm:gap-4 md:grid-cols-2", heading && "mt-6 sm:mt-8")}>
         {services.map((service, index) => (
           <ServiceCard
             key={service.slug}
@@ -52,24 +54,26 @@ function ServiceCard({
     >
       <p
         className={cx(
-          "text-sm font-semibold tracking-[0.12em] uppercase",
+          "text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm",
           emphasis ? "text-paper" : "text-accent",
         )}
       >
         {service.eyebrow}
       </p>
-      <Title className="mt-3 font-display text-xl font-semibold tracking-tight sm:text-2xl lg:text-3xl">
+      <Title className="mt-2.5 font-display text-lg font-semibold tracking-tight sm:mt-3 sm:text-xl lg:text-2xl">
         {service.title}
       </Title>
-      <p className={cx("mt-3 flex-1 text-sm leading-6 sm:mt-4 sm:text-base sm:leading-7", emphasis ? "text-inverse-muted" : "text-muted")}>
-        {service.description}
+      <p
+        className={cx(
+          "mt-2.5 flex-1 text-sm leading-6 sm:mt-3",
+          emphasis ? "text-inverse-muted" : "text-muted",
+        )}
+      >
+        {service.summary}
       </p>
       <Link
         href={service.href}
-        className={cx(
-          "mt-6 text-sm font-semibold sm:mt-8",
-          emphasis ? "text-white" : "text-accent",
-        )}
+        className={cx("mt-6 text-sm font-semibold", emphasis ? "text-white" : "text-accent")}
       >
         Entender a {service.shortTitle.toLowerCase()}
       </Link>
