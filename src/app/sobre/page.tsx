@@ -80,6 +80,10 @@ export default function AboutPage() {
               <dd>{company.cnpj}</dd>
             </div>
             <div>
+              <dt className="font-semibold text-ink">Data de fundação</dt>
+              <dd>{company.foundedOnLabel}</dd>
+            </div>
+            <div>
               <dt className="font-semibold text-ink">Sede</dt>
               <dd>
                 {company.city}, {company.state}

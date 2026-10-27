@@ -20,11 +20,14 @@ export const site = {
 } as const;
 
 export const company = {
+  /** Nome fantasia da marca. */
   tradeName: "Recebecom",
+  /** Razão social. */
   legalName: "MAICON FERREIRA FRANCA",
   cnpj: "30.373.169/0001-58",
   cnpjDigits: "30373169000158",
   foundedOn: "2018-05-04",
+  foundedOnLabel: "04/05/2018",
   city: "Itajaí",
   state: "SC",
 } as const;

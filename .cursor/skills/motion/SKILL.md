@@ -17,7 +17,7 @@ Transição curta, 200ms, em cor, fundo e sombra. Hover de botão sobe 2px e gan
 
 Faixa fixa usa `bg-white/80`, `backdrop-blur-sm` e `supports-[backdrop-filter]:bg-white/70`. Ela não reserva altura no fluxo e não empurra o rodapé.
 
-O header começa transparente. Com `data-scrolled` (após 8px de rolagem), passa a `bg-white/80`, borda, sombra e `backdrop-blur-sm`.
+O header começa transparente. Com a classe `is-scrolled` (após 8px de rolagem, via `HeaderScroll`), o CSS em `globals.css` aplica fundo branco semitransparente, borda, sombra e blur.
 
 ## Redução
 

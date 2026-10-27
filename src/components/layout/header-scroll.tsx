@@ -2,14 +2,15 @@
 
 import { useEffect } from "react";
 
+const SCROLLED_CLASS = "is-scrolled";
+
 export function HeaderScroll() {
   useEffect(() => {
     const header = document.querySelector("[data-site-header]");
-    if (!header) return;
+    if (!(header instanceof HTMLElement)) return;
 
     const onScroll = () => {
-      if (window.scrollY > 8) header.setAttribute("data-scrolled", "");
-      else header.removeAttribute("data-scrolled");
+      header.classList.toggle(SCROLLED_CLASS, window.scrollY > 8);
     };
 
     onScroll();
