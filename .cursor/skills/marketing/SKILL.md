@@ -11,7 +11,7 @@ Leia `.cursor/context/brand.md` e `.cursor/context/audience.md`.
 
 Promessa: cobrança da taxa condominial, da recorrente à via judicial, para o caixa do condomínio. Slogan existente: "Cobrança que gera resultados."
 
-Fale com quem responde pelo caixa. O condômino entra só na consulta da própria pendência.
+Fale com quem responde pelo caixa. O morador entra só para verificar pendências da unidade.
 
 ## Prova
 

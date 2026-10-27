@@ -18,19 +18,25 @@ export function ProcessSteps({
           description="Cada condomínio entra pelo mesmo caminho. A régua e o processo só avançam com o que a carteira mostrar."
         />
       ) : null}
-      <ol className={heading ? "mt-12 grid gap-10 md:grid-cols-4 md:gap-6" : "grid gap-10 md:grid-cols-4 md:gap-6"}>
+      <ol
+        className={
+          heading
+            ? "mt-8 grid gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:mt-12 lg:grid-cols-4 lg:gap-6"
+            : "grid gap-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-6"
+        }
+      >
         {processSteps.map((step) => {
           const Title = heading ? "h3" : "h2";
 
           return (
-            <li key={step.number}>
-              <span className="flex h-14 w-14 items-center justify-center rounded-control bg-accent-soft text-accent">
+            <li key={step.number} className="min-w-0">
+              <span className="flex h-12 w-12 items-center justify-center rounded-control bg-accent-soft text-accent sm:h-14 sm:w-14">
                 <ProcessIcon name={step.icon} />
               </span>
-              <p className="mt-5 font-display text-sm font-semibold tracking-[0.16em] text-accent">
+              <p className="mt-4 font-display text-sm font-semibold tracking-[0.16em] text-accent sm:mt-5">
                 {step.number}
               </p>
-              <Title className="mt-2 font-display text-2xl font-semibold tracking-tight text-ink">
+              <Title className="mt-2 font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
                 {step.title}
               </Title>
               <p className="mt-2 text-sm leading-6 text-muted">{step.description}</p>

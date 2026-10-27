@@ -1,5 +1,5 @@
 export const primaryNav = [
-  { href: "/consultar", label: "Pendências", description: "Condômino: consulte CPF ou CNPJ" },
+  { href: "/consultar", label: "Pendências", description: "Morador: verifique pendências da unidade" },
   { href: "/servicos", label: "Serviços", description: "Cobrança recorrente e judicial" },
   { href: "/segmentos", label: "Segmentos", description: "Residencial, corporativo e galpão" },
   { href: "/como-funciona", label: "Como funciona", description: "Do diagnóstico à cobrança" },
@@ -7,7 +7,7 @@ export const primaryNav = [
 ] as const;
 
 export const consultHref = "/consultar";
-export const consultLabel = "Consultar pendências";
+export const consultLabel = "Verificar pendências";
 
 export const contactHref = "/contato";
 export const contactLabel = "Solicitar diagnóstico";

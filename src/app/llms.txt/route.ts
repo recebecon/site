@@ -8,13 +8,13 @@ const pages: { href: string; title: string; summary: string }[] = [
     href: "/",
     title: "Início",
     summary:
-      "Cobrança recorrente e judicial para condomínios, com consulta de pendências para o condômino.",
+      "Cobrança recorrente e judicial para condomínios, com verificação de pendências da unidade para o morador.",
   },
   {
     href: "/consultar",
-    title: "Consultar pendências",
+    title: "Verificar pendências",
     summary:
-      "Condômino consulta pendências de condomínio na Recebecom com CPF ou CNPJ.",
+      "Morador verifica pendências da unidade na Recebecom com CPF ou CNPJ.",
   },
   {
     href: "/servicos",
@@ -76,7 +76,7 @@ export function GET() {
     "",
     `> ${site.description} ${site.slogan}`,
     "",
-    "Público: síndico, administradora e conselho. O condômino com débito usa a consulta de pendências.",
+    "Público: síndico, administradora e conselho. O morador com débito verifica as pendências da unidade.",
     "",
     "## Páginas",
     "",

@@ -16,7 +16,7 @@ const points = [
   {
     title: "O cliente é quem administra",
     description:
-      "Síndico, administradora e conselho. A Recebecom não trata o condômino inadimplente como contratante.",
+      "Síndico, administradora e conselho. A Recebecom não trata o morador inadimplente como contratante.",
   },
   {
     title: "Duas frentes, um caixa",
@@ -45,14 +45,19 @@ export default function AboutPage() {
         description="A Recebecom existe para tirar a inadimplência do improviso. A administração continua no comando do condomínio. A cobrança passa a ter método."
         crumbs={[{ name: "Início", path: "/" }, { name: "Sobre" }]}
       />
-      <section className="py-16 md:py-24">
-        <Container className="grid gap-6 md:grid-cols-3">
+      <section className="py-12 sm:py-16 lg:py-24">
+        <Container className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
           {points.map((point) => (
-            <article key={point.title} className="rounded-card border border-line p-6">
-              <h2 className="font-display text-2xl font-semibold tracking-tight text-ink">
+            <article
+              key={point.title}
+              className="min-w-0 rounded-card border border-line p-5 sm:p-6"
+            >
+              <h2 className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
                 {point.title}
               </h2>
-              <p className="mt-3 leading-7 text-muted">{point.description}</p>
+              <p className="mt-3 text-sm leading-6 text-muted sm:text-base sm:leading-7">
+                {point.description}
+              </p>
             </article>
           ))}
         </Container>

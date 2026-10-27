@@ -6,9 +6,9 @@ import { createMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata = createMetadata({
-  title: "Consultar pendências",
+  title: "Verificar pendências",
   description:
-    "Condômino consulta pendências de condomínio na Recebecom com CPF ou CNPJ.",
+    "Morador verifica pendências da unidade na Recebecom com CPF ou CNPJ.",
   path: "/consultar",
 });
 
@@ -18,16 +18,16 @@ export default function ConsultaPage() {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Início", path: "/" },
-          { name: "Consultar pendências", path: "/consultar" },
+          { name: "Verificar pendências", path: "/consultar" },
         ])}
       />
       <PageHeader
-        eyebrow="Para o condômino"
-        title="Consulte pendências no CPF ou CNPJ."
-        description="A consulta mostra o que a Recebecom tem registrado para o documento do responsável pela unidade. Síndico e administradora seguem pelo diagnóstico."
-        crumbs={[{ name: "Início", path: "/" }, { name: "Consultar pendências" }]}
+        eyebrow="Para o morador"
+        title="Verifique pendências da unidade."
+        description="A consulta mostra o que a Recebecom tem registrado para o documento de quem responde pela unidade. Síndico e administradora seguem pelo diagnóstico."
+        crumbs={[{ name: "Início", path: "/" }, { name: "Verificar pendências" }]}
       />
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 lg:py-24">
         <Container className="max-w-xl">
           <ConsultaForm />
         </Container>

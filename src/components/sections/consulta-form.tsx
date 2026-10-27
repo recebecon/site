@@ -75,10 +75,10 @@ export function ConsultaForm({ compact = false }: { compact?: boolean }) {
           {showError ? documentError(documentValue) : feedback.message}
         </p>
         <Button type="submit" disabled={pending} className="w-full">
-          {pending ? "Consultando…" : "Consultar pendências"}
+          {pending ? "Verificando…" : "Verificar pendências"}
         </Button>
         <p className="text-sm leading-6 text-muted">
-          O documento serve só para esta consulta e não fica gravado no navegador.{" "}
+          O documento serve só para verificar a unidade e não fica gravado no navegador.{" "}
           <Link href="/privacidade" className="font-semibold text-accent underline-offset-4 hover:underline">
             Política de Privacidade
           </Link>

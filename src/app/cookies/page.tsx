@@ -30,7 +30,7 @@ export default function CookiesPage() {
         description="O botão Aceitar grava um cookie essencial com a sua concordância. Cookie de anúncio exigiria outro consentimento. Este site não usa."
         crumbs={[{ name: "Início", path: "/" }, { name: "Cookies" }]}
       />
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 lg:py-24">
         <Container className="max-w-3xl space-y-10 text-base leading-8 text-ink">
           <div>
             <h2 className="font-display text-2xl font-semibold tracking-tight">

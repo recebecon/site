@@ -5,8 +5,8 @@ export function FaqList() {
     <div className="divide-y divide-line border-y border-line">
       {faqs.map((item) => (
         <details key={item.question} className="group py-1">
-          <summary className="cursor-pointer list-none py-4 font-display text-xl font-semibold tracking-tight text-ink transition-colors duration-200 hover:text-accent md:text-2xl [&::-webkit-details-marker]:hidden">
-            <span className="flex items-start justify-between gap-6">
+          <summary className="cursor-pointer list-none py-4 font-display text-lg font-semibold tracking-tight text-ink transition-colors duration-200 hover:text-accent sm:text-xl md:text-2xl [&::-webkit-details-marker]:hidden">
+            <span className="flex items-start justify-between gap-4 sm:gap-6">
               {item.question}
               <span
                 aria-hidden="true"

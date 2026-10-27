@@ -31,7 +31,7 @@ export function ServiceView({ service }: { service: Service }) {
           { name: service.title },
         ]}
       />
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 lg:py-24">
         <Container className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(260px,0.9fr)]">
           <div>
             <p className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">

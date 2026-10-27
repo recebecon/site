@@ -18,7 +18,7 @@ export const processSteps = [
     icon: "acordo",
     title: "Acordo",
     description:
-      "Quando cabe, a condição de pagamento é fechada para o condômino pagar e o caixa voltar a prever a entrada.",
+      "Quando cabe, a condição de pagamento é fechada para o morador pagar e o caixa voltar a prever a entrada.",
   },
   {
     number: "04",

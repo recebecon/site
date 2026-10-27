@@ -27,7 +27,7 @@ export default function ContactPage() {
         description="Síndico, administradora ou conselho: diga o tipo de condomínio e o que está em aberto. Sem telefone insistente nesta página."
         crumbs={[{ name: "Início", path: "/" }, { name: "Contato" }]}
       />
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 lg:py-24">
         <Container className="max-w-3xl">
           <ContactForm />
         </Container>

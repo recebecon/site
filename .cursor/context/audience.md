@@ -1,9 +1,9 @@
 # Público
 
-Dois caminhos, sem misturar o contratante com o condômino.
+Dois caminhos, sem misturar o contratante com o morador.
 
 - Quem administra (síndico, administradora, conselho) pede diagnóstico em `/contato`.
-- O condômino com pendência consulta o próprio CPF ou CNPJ em `/consultar` e no bloco da home.
+- O morador com pendência verifica a unidade com o próprio CPF ou CNPJ em `/consultar` e no bloco da home.
 
 Segmentos: residencial, corporativo, galpões industriais e outros empreendimentos.
 

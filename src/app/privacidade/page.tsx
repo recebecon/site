@@ -33,10 +33,10 @@ export default function PrivacyPage() {
       <PageHeader
         eyebrow="Privacidade"
         title="Como a Recebecom trata dados pessoais neste site."
-        description="A Lei Geral de Proteção de Dados vale para o diagnóstico de quem administra o condomínio e para a consulta de pendências do condômino. Esta página não substitui o contrato com o condomínio."
+        description="A Lei Geral de Proteção de Dados vale para o diagnóstico de quem administra o condomínio e para a verificação de pendências da unidade pelo morador. Esta página não substitui o contrato com o condomínio."
         crumbs={[{ name: "Início", path: "/" }, { name: "Privacidade" }]}
       />
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 lg:py-24">
         <Container className="max-w-3xl space-y-10 text-base leading-8 text-ink">
           <Block title="Quem trata">
             <p>
@@ -46,8 +46,8 @@ export default function PrivacyPage() {
               o condomínio.
             </p>
             <p>
-              Na consulta de pendências, a Recebecom trata o CPF ou CNPJ para
-              localizar registros da cobrança da taxa. O condomínio e a
+              Na verificação de pendências da unidade, a Recebecom trata o CPF ou
+              CNPJ para localizar registros da cobrança da taxa. O condomínio e a
               administradora seguem responsáveis pela gestão do condomínio e pela
               origem da dívida.
             </p>
@@ -75,10 +75,11 @@ export default function PrivacyPage() {
               preliminar a um contrato, no art. 7º, inciso V, da Lei nº 13.709/2018.
             </p>
             <p>
-              A consulta existe para a pessoa ver pendências já registradas naquele
-              documento. A base é o legítimo interesse de informar a cobrança da
-              taxa e o do titular de conhecer o próprio registro, no art. 7º,
-              inciso IX. Sem o documento, a consulta não acontece.
+              A verificação existe para o morador ver pendências da unidade já
+              registradas naquele documento. A base é o legítimo interesse de
+              informar a cobrança da taxa e o do titular de conhecer o próprio
+              registro, no art. 7º, inciso IX. Sem o documento, a consulta não
+              acontece.
             </p>
             <p>
               Sem nome e um meio de contato, o diagnóstico não tem como ser

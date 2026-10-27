@@ -10,7 +10,7 @@ import { Logo } from "@/design-system/ui/logo";
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-paper text-ink">
-      <Container className="grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:py-16">
+      <Container className="grid gap-8 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:py-16">
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-6 text-muted">

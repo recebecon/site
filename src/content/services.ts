@@ -32,7 +32,7 @@ export const services: Service[] = [
       {
         title: "Acordo antes do conflito",
         description:
-          "O condômino em atraso recebe uma condição viável para o caixa, sem transformar a cobrança em desgaste de assembleia.",
+          "O morador em atraso recebe uma condição viável para o caixa, sem transformar a cobrança em desgaste de assembleia.",
       },
       {
         title: "Visão para a administração",

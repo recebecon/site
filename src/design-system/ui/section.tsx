@@ -19,7 +19,7 @@ export function Section({
       id={id}
       aria-labelledby={labelledBy}
       className={cx(
-        "py-16 md:py-24",
+        "py-12 sm:py-16 lg:py-24",
         tone === "paper" && "bg-paper",
         className,
       )}
@@ -49,12 +49,14 @@ export function SectionHeading({
       ) : null}
       <h2
         id={id}
-        className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-5xl md:leading-[1.05]"
+        className="mt-3 font-display text-[1.75rem] font-semibold tracking-tight text-ink sm:text-3xl sm:leading-tight lg:text-5xl lg:leading-[1.05]"
       >
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-lg leading-8 text-muted">{description}</p>
+        <p className="mt-3 text-base leading-7 text-muted sm:mt-4 sm:text-lg sm:leading-8">
+          {description}
+        </p>
       ) : null}
     </div>
   );

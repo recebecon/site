@@ -22,12 +22,12 @@ export const faqs = [
   {
     question: "Quem é o cliente da Recebecom?",
     answer:
-      "Síndico, administradora e conselho. A conversa é com quem responde pelo caixa do condomínio, não com o condômino como se ele fosse o contratante.",
+      "Síndico, administradora e conselho. A conversa é com quem responde pelo caixa do condomínio, não com o morador como se ele fosse o contratante.",
   },
   {
-    question: "O condômino consegue ver o que está em aberto?",
+    question: "O morador consegue ver o que está em aberto?",
     answer:
-      "Sim. Em Consultar pendências, o CPF ou CNPJ do responsável mostra as pendências de condomínio registradas na Recebecom para aquele documento.",
+      "Sim. Em Verificar pendências, o CPF ou CNPJ do responsável mostra as pendências da unidade registradas na Recebecom para aquele documento.",
   },
   {
     question: "Como começa um diagnóstico?",
