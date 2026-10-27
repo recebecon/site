@@ -27,12 +27,14 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
-          <Button
-            href={contactHref}
-            className="hidden h-11 !rounded-[100px] px-6 text-[15px] lg:inline-flex"
-          >
-            {contactLabel}
-          </Button>
+          <div className="hidden lg:block">
+            <Button
+              href={contactHref}
+              className="h-11 !rounded-[100px] px-6 text-[15px]"
+            >
+              {contactLabel}
+            </Button>
+          </div>
           <Suspense fallback={<MobileNavFallback />}>
             <MobileNav />
           </Suspense>
