@@ -27,7 +27,7 @@ export function SegmentView({ segment }: { segment: Segment }) {
           { name: segment.title },
         ]}
       />
-      <section className="py-12 sm:py-16 lg:py-24">
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20">
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-3xl font-semibold tracking-tight text-ink">

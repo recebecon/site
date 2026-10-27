@@ -14,12 +14,12 @@ export function PageHeader({
 }) {
   return (
     <header className="border-b border-line bg-paper">
-      <Container className="py-10 sm:py-14 lg:py-20">
+      <Container className="py-8 sm:py-12 md:py-14 lg:py-16">
         <Breadcrumb items={crumbs} />
-        <p className="mt-6 text-sm font-semibold tracking-[0.14em] text-accent uppercase sm:mt-8">
+        <p className="mt-5 text-sm font-semibold tracking-[0.14em] text-accent uppercase sm:mt-7">
           {eyebrow}
         </p>
-        <h1 className="mt-3 max-w-4xl font-display text-[1.9rem] font-semibold tracking-tight text-ink sm:text-4xl sm:leading-tight md:text-6xl md:leading-[1.02]">
+        <h1 className="mt-3 max-w-4xl font-display text-[clamp(1.75rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-tight text-ink">
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-7 text-muted sm:mt-5 sm:text-lg sm:leading-8">

@@ -17,7 +17,7 @@ export function SegmentGrid({ heading = true }: { heading?: boolean }) {
       <ul
         className={cx(
           "grid gap-3 sm:grid-cols-2 sm:gap-4",
-          heading && "mt-8 sm:mt-10 lg:mt-12",
+          heading && "mt-6 sm:mt-8 lg:mt-10",
         )}
       >
         {segments.map((segment) => {

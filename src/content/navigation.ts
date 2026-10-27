@@ -1,5 +1,5 @@
 export const primaryNav = [
-  { href: "/consultar", label: "Pendências", description: "Morador: verifique pendências da unidade" },
+  { href: "/consultar", label: "Moradores", description: "Verifique pendências da unidade" },
   { href: "/servicos", label: "Serviços", description: "Cobrança recorrente e judicial" },
   { href: "/segmentos", label: "Segmentos", description: "Residencial, corporativo e galpão" },
   { href: "/como-funciona", label: "Como funciona", description: "Do diagnóstico à cobrança" },

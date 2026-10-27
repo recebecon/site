@@ -1,4 +1,4 @@
-import { site, socialLinks } from "@/content/site";
+import { company, site, socialLinks } from "@/content/site";
 import { services } from "@/content/services";
 import { absoluteUrl } from "@/lib/metadata";
 
@@ -22,9 +22,13 @@ export function siteJsonLd() {
         "@type": "Organization",
         "@id": organizationId,
         name: site.name,
+        legalName: company.legalName,
+        alternateName: company.tradeName,
+        taxID: company.cnpjDigits,
         url: site.url,
         description: site.description,
         slogan: site.slogan,
+        foundingDate: company.foundedOn,
         logo: {
           "@type": "ImageObject",
           url: absoluteUrl("/brand/logo.png"),
@@ -32,6 +36,12 @@ export function siteJsonLd() {
           height: 196,
         },
         image: absoluteUrl("/brand/logo.png"),
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: company.city,
+          addressRegion: company.state,
+          addressCountry: "BR",
+        },
         areaServed: {
           "@type": "Country",
           name: "Brasil",

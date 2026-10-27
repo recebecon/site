@@ -19,6 +19,16 @@ export const site = {
   copyrightYear: 2026,
 } as const;
 
+export const company = {
+  tradeName: "Recebecom",
+  legalName: "MAICON FERREIRA FRANCA",
+  cnpj: "30.373.169/0001-58",
+  cnpjDigits: "30373169000158",
+  foundedOn: "2018-05-04",
+  city: "Itajaí",
+  state: "SC",
+} as const;
+
 export const shareImage = {
   path: "/og.jpg",
   width: 1200,

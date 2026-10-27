@@ -16,3 +16,5 @@ Logo colorida em `public/brand/logo.png`. Em superfície clara, use a logo color
 Fonte de texto: Geist. Fonte de título: Bricolage Grotesque. Componentes usam utilidades (`bg-ink`, `text-accent`, `font-display`), não hex solto. Hex fica em `src/design-system/tokens.css` e, quando o gerador exigir, na imagem Open Graph.
 
 Idioma da interface: pt-BR. Tom direto, para síndico, administradora e conselho.
+
+Identificação legal em `src/content/site.ts` (`company`): nome fantasia Recebecom, razão social MAICON FERREIRA FRANCA, CNPJ 30.373.169/0001-58, sede Itajaí/SC. Não diga que a Recebecom é escritório de advocacia.

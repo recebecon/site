@@ -8,7 +8,7 @@ import { breadcrumbJsonLd } from "@/lib/structured-data";
 export const metadata = createMetadata({
   title: "Verificar pendências",
   description:
-    "Morador verifica pendências da unidade na Recebecom com CPF ou CNPJ.",
+    "Moradores verificam pendências da unidade na Recebecom com CPF ou CNPJ.",
   path: "/consultar",
 });
 
@@ -22,12 +22,12 @@ export default function ConsultaPage() {
         ])}
       />
       <PageHeader
-        eyebrow="Para o morador"
+        eyebrow="Para moradores"
         title="Verifique pendências da unidade."
         description="A consulta mostra o que a Recebecom tem registrado para o documento de quem responde pela unidade. Síndico e administradora seguem pelo diagnóstico."
         crumbs={[{ name: "Início", path: "/" }, { name: "Verificar pendências" }]}
       />
-      <section className="py-12 sm:py-16 lg:py-24">
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20">
         <Container className="max-w-xl">
           <ConsultaForm />
         </Container>

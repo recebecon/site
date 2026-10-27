@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
         crumbs={[{ name: "Início", path: "/" }, { name: "Como funciona" }]}
       />
       <ProcessSteps heading={false} />
-      <section className="bg-paper py-12 sm:py-16 lg:py-24" aria-labelledby="faq-processo">
+      <section className="bg-paper py-10 sm:py-12 md:py-16 lg:py-20" aria-labelledby="faq-processo">
         <Container>
           <SectionHeading
             id="faq-processo"

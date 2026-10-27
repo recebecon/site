@@ -21,8 +21,8 @@ export function ProcessSteps({
       <ol
         className={
           heading
-            ? "mt-8 grid gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:mt-12 lg:grid-cols-4 lg:gap-6"
-            : "grid gap-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-6"
+            ? "mt-6 grid gap-6 sm:mt-8 sm:grid-cols-2 sm:gap-7 lg:mt-10 lg:grid-cols-4 lg:gap-6"
+            : "grid gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4 lg:gap-6"
         }
       >
         {processSteps.map((step) => {

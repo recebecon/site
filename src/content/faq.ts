@@ -27,7 +27,7 @@ export const faqs = [
   {
     question: "O morador consegue ver o que está em aberto?",
     answer:
-      "Sim. Em Verificar pendências, o CPF ou CNPJ do responsável mostra as pendências da unidade registradas na Recebecom para aquele documento.",
+      "Sim. Em Moradores, o CPF ou CNPJ do responsável mostra as pendências da unidade registradas na Recebecom para aquele documento.",
   },
   {
     question: "Como começa um diagnóstico?",

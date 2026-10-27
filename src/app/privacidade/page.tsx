@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHeader } from "@/components/layout/page-header";
+import { company } from "@/content/site";
 import { Container } from "@/design-system/ui/container";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
@@ -36,14 +37,15 @@ export default function PrivacyPage() {
         description="A Lei Geral de Proteção de Dados vale para o diagnóstico de quem administra o condomínio e para a verificação de pendências da unidade pelo morador. Esta página não substitui o contrato com o condomínio."
         crumbs={[{ name: "Início", path: "/" }, { name: "Privacidade" }]}
       />
-      <section className="py-12 sm:py-16 lg:py-24">
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20">
         <Container className="max-w-3xl space-y-10 text-base leading-8 text-ink">
           <Block title="Quem trata">
             <p>
-              A Recebecom é a controladora dos dados enviados no formulário de
-              diagnóstico: nome, e-mail, telefone, papel, tipo de condomínio e
-              mensagem. Ela decide esse tratamento para responder quem administra
-              o condomínio.
+              A controladora é {company.legalName}, nome fantasia{" "}
+              {company.tradeName}, CNPJ {company.cnpj}, com sede em{" "}
+              {company.city}/{company.state}. Ela trata os dados do formulário de
+              diagnóstico (nome, e-mail, telefone, papel, tipo de condomínio e
+              mensagem) para responder quem administra o condomínio.
             </p>
             <p>
               Na verificação de pendências da unidade, a Recebecom trata o CPF ou

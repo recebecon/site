@@ -30,17 +30,17 @@ export function Principles() {
         title="Clareza para quem responde pelo caixa."
         description="Cadência, acordo e via judicial. Cada condomínio acompanha a própria carteira, sem promessa genérica de resultado."
       />
-      <ul className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:mt-12 lg:grid-cols-4">
+      <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 lg:mt-10 lg:grid-cols-4">
         {principles.map((item) => (
-          <li key={item.title} className="lift rounded-card border border-line bg-white p-4 sm:p-5">
-            <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
+          <li key={item.title} className="lift min-w-0 rounded-card border border-line bg-white p-4 sm:p-5">
+            <h3 className="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl">
               {item.title}
             </h3>
             <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
           </li>
         ))}
       </ul>
-      <p className="mt-8 text-sm text-muted">
+      <p className="mt-6 text-sm text-muted sm:mt-8">
         As duas frentes estão em{" "}
         <Link href={services[0].href} className="font-semibold text-accent">
           {services[0].title.toLowerCase()}

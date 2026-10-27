@@ -1,6 +1,7 @@
 import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/sections/cta-band";
 import { PageHeader } from "@/components/layout/page-header";
+import { company } from "@/content/site";
 import { Container } from "@/design-system/ui/container";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
@@ -45,7 +46,7 @@ export default function AboutPage() {
         description="A Recebecom existe para tirar a inadimplência do improviso. A administração continua no comando do condomínio. A cobrança passa a ter método."
         crumbs={[{ name: "Início", path: "/" }, { name: "Sobre" }]}
       />
-      <section className="py-12 sm:py-16 lg:py-24">
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20">
         <Container className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
           {points.map((point) => (
             <article
@@ -60,6 +61,31 @@ export default function AboutPage() {
               </p>
             </article>
           ))}
+        </Container>
+        <Container className="mt-10 max-w-3xl sm:mt-12">
+          <h2 className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+            Identificação
+          </h2>
+          <dl className="mt-4 space-y-3 text-sm leading-6 text-muted sm:text-base sm:leading-7">
+            <div>
+              <dt className="font-semibold text-ink">Nome fantasia</dt>
+              <dd>{company.tradeName}</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink">Razão social</dt>
+              <dd>{company.legalName}</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink">CNPJ</dt>
+              <dd>{company.cnpj}</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink">Sede</dt>
+              <dd>
+                {company.city}, {company.state}
+              </dd>
+            </div>
+          </dl>
         </Container>
       </section>
       <CtaBand />

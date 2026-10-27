@@ -20,7 +20,7 @@ export default function HomePage() {
       <ServiceGrid />
       <SegmentGrid />
       <ProcessSteps id="como-funciona" />
-      <section className="bg-paper py-12 sm:py-16 lg:py-24" aria-labelledby="faq-titulo">
+      <section className="bg-paper py-10 sm:py-12 md:py-16 lg:py-20" aria-labelledby="faq-titulo">
         <Container>
           <SectionHeading
             id="faq-titulo"
@@ -28,7 +28,7 @@ export default function HomePage() {
             title="Perguntas de quem administra."
             description="Respostas diretas sobre o papel da Recebecom, a régua e a via judicial."
           />
-          <div className="mt-8 sm:mt-10">
+          <div className="mt-6 sm:mt-8 md:mt-10">
             <FaqList />
           </div>
         </Container>

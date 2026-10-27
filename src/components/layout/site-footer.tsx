@@ -3,7 +3,7 @@ import Link from "next/link";
 import { primaryNav } from "@/content/navigation";
 import { segments } from "@/content/segments";
 import { services } from "@/content/services";
-import { site, socialLinks } from "@/content/site";
+import { company, site, socialLinks } from "@/content/site";
 import { Container } from "@/design-system/ui/container";
 import { Logo } from "@/design-system/ui/logo";
 
@@ -45,9 +45,15 @@ export function SiteFooter() {
         </FooterColumn>
       </Container>
       <Container className="flex flex-wrap items-center justify-between gap-4 border-t border-line py-6">
-        <p className="text-sm text-muted">
-          © {site.copyrightYear} Recebecom. Cobrança para condomínios.
-        </p>
+        <div className="space-y-1 text-sm text-muted">
+          <p>
+            © {site.copyrightYear} {company.tradeName}. Cobrança para condomínios.
+          </p>
+          <p>
+            {company.legalName} · CNPJ {company.cnpj} · {company.city},{" "}
+            {company.state}
+          </p>
+        </div>
         <ul className="ml-auto flex items-center gap-1">
           {socialLinks.map((item) => (
             <li key={item.name}>
