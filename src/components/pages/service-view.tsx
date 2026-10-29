@@ -7,7 +7,7 @@ import { Container } from "@/design-system/ui/container";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/structured-data";
 
 export function ServiceView({ service }: { service: Service }) {
-  const other = services.find((item) => item.slug !== service.slug);
+  const others = services.filter((item) => item.slug !== service.slug);
 
   return (
     <>
@@ -65,14 +65,19 @@ export function ServiceView({ service }: { service: Service }) {
           </aside>
         </Container>
       </section>
-      {other ? (
+      {others.length > 0 ? (
         <section className="border-t border-line py-12">
           <Container>
             <p className="text-muted">
-              A outra frente deste condomínio é a{" "}
-              <Link href={other.href} className="font-semibold text-accent">
-                {other.title.toLowerCase()}
-              </Link>
+              Veja também{" "}
+              {others.map((item, index) => (
+                <span key={item.slug}>
+                  {index > 0 ? (index === others.length - 1 ? " e " : ", ") : null}
+                  <Link href={item.href} className="font-semibold text-accent">
+                    {item.title.toLowerCase()}
+                  </Link>
+                </span>
+              ))}
               .
             </p>
           </Container>

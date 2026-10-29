@@ -1,5 +1,7 @@
+import { garantidorService } from "@/content/garantidor";
+
 export type Service = {
-  slug: "cobranca-recorrente" | "cobranca-judicial";
+  slug: "cobranca-recorrente" | "cobranca-judicial" | "garantidor";
   href: string;
   title: string;
   shortTitle: string;
@@ -9,6 +11,8 @@ export type Service = {
   promise: string;
   points: { title: string; description: string }[];
   steps: string[];
+  /** Texto do link no card. Default: "Entender a {shortTitle}". */
+  linkLabel?: string;
 };
 
 export const services: Service[] = [
@@ -82,6 +86,22 @@ export const services: Service[] = [
       "Encaminhamos a cobrança judicial com profissionais habilitados.",
       "Informamos a administração sobre etapas e desfechos relevantes.",
     ],
+  },
+  {
+    slug: "garantidor",
+    href: garantidorService.href,
+    title: garantidorService.title,
+    shortTitle: garantidorService.shortTitle,
+    eyebrow: garantidorService.eyebrow,
+    summary: garantidorService.summary,
+    description: garantidorService.description,
+    promise: garantidorService.promise,
+    points: garantidorService.differences.items.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    steps: [...garantidorService.steps],
+    linkLabel: "Entender o garantidor",
   },
 ];
 

@@ -9,7 +9,7 @@ import { breadcrumbJsonLd } from "@/lib/structured-data";
 export const metadata = createMetadata({
   title: "Serviços",
   description:
-    "Cobrança recorrente, cobrança judicial e garantidor opcional para o caixa do condomínio. Para síndicos e administradoras.",
+    "Cobrança recorrente, cobrança judicial e Garantidor opcional para o caixa do condomínio. Para síndicos e administradoras.",
   path: "/servicos",
 });
 
@@ -24,8 +24,8 @@ export default function ServicesPage() {
       />
       <PageHeader
         eyebrow="Serviços"
-        title="Cobrança, judicial e garantidor."
-        description="A régua cuida da taxa do mês. A judicial entra quando a via amigável se esgota. O garantidor é crédito opcional: só sob interesse, avaliação e aceite."
+        title="Cobrança firme. Caixa protegido."
+        description="Régua no ciclo do mês, via judicial quando couber e Garantidor sob interesse e aceite. Três frentes para quem administra o condomínio."
         crumbs={[{ name: "Início", path: "/" }, { name: "Serviços" }]}
       />
       <ServiceGrid heading={false} />

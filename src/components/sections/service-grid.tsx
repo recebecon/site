@@ -17,15 +17,20 @@ export function ServiceGrid({
           id="servicos-titulo"
           eyebrow="Soluções"
           title="Cobrança firme. Caixa protegido."
-          description="Régua no ciclo do mês, via judicial quando couber — e garantidor opcional quando o condomínio quiser avaliar."
+          description="Régua no ciclo do mês, via judicial quando couber, e garantidor opcional quando o condomínio quiser avaliar."
         />
       ) : null}
-      <div className={cx("grid gap-3 sm:gap-4 md:grid-cols-2", heading && "mt-6 sm:mt-8")}>
-        {services.map((service, index) => (
+      <div
+        className={cx(
+          "grid gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3",
+          heading && "mt-6 sm:mt-8",
+        )}
+      >
+        {services.map((service) => (
           <ServiceCard
             key={service.slug}
             service={service}
-            emphasis={index === 1}
+            emphasis={service.slug === "garantidor"}
             titleTag={heading ? "h3" : "h2"}
           />
         ))}
@@ -75,7 +80,7 @@ function ServiceCard({
         href={service.href}
         className={cx("mt-6 text-sm font-semibold", emphasis ? "text-white" : "text-accent")}
       >
-        Entender a {service.shortTitle.toLowerCase()}
+        {service.linkLabel ?? `Entender a ${service.shortTitle.toLowerCase()}`}
       </Link>
     </article>
   );

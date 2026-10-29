@@ -20,7 +20,7 @@ const pages: { href: string; title: string; summary: string }[] = [
     href: "/servicos",
     title: "Serviços",
     summary:
-      "Cobrança recorrente e cobrança judicial da taxa condominial para síndicos e administradoras.",
+      "Cobrança recorrente, cobrança judicial e Garantidor opcional para síndicos e administradoras.",
   },
   ...services.map((service) => ({
     href: service.href,

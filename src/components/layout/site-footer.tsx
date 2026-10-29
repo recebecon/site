@@ -26,8 +26,8 @@ export function SiteFooter() {
         <div>
           <Logo />
           <p className="mt-5 max-w-sm text-base leading-7 text-muted">
-            Cobrança recorrente e judicial para condomínios. A conversa é com
-            síndico, administradora e conselho.
+            Cobramos a taxa do condomínio e cuidamos do caixa com quem
+            administra: síndico, administradora e conselho.
           </p>
         </div>
         <FooterColumn title="Serviços">

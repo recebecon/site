@@ -1,4 +1,3 @@
-import { contactHref } from "@/content/navigation";
 import { optionalGuarantor } from "@/content/partners";
 import { Button } from "@/design-system/ui/button";
 import { Section, SectionHeading } from "@/design-system/ui/section";
@@ -19,9 +18,18 @@ export function GarantidorNote({
             title={optionalGuarantor.title}
             description={optionalGuarantor.summary}
           />
-          <Button href={contactHref} className="mt-6 w-full sm:mt-8 sm:w-auto">
-            {optionalGuarantor.cta}
-          </Button>
+          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <Button href={optionalGuarantor.href} className="w-full sm:w-auto">
+              {optionalGuarantor.cta}
+            </Button>
+            <Button
+              href={optionalGuarantor.evaluateHref}
+              variant="secondary"
+              className="w-full sm:w-auto"
+            >
+              {optionalGuarantor.evaluateCta}
+            </Button>
+          </div>
         </div>
 
         <ul
@@ -31,7 +39,10 @@ export function GarantidorNote({
           )}
         >
           {optionalGuarantor.points.map((point) => (
-            <li key={point.title} className="min-w-0 border-b border-line pb-3 last:border-b-0 last:pb-0 sm:pb-4">
+            <li
+              key={point.title}
+              className="min-w-0 border-b border-line pb-3 last:border-b-0 last:pb-0 sm:pb-4"
+            >
               <p className="font-display text-base font-semibold tracking-tight text-ink sm:text-lg">
                 {point.title}
               </p>

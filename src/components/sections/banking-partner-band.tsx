@@ -19,8 +19,8 @@ export function BankingPartnerBand() {
           Correspondência bancária com o Santander.
         </h2>
         <p className="mt-2.5 max-w-lg text-sm leading-6 text-muted sm:text-base sm:leading-7">
-          O garantidor e demais operações de crédito seguem interesse, avaliação
-          e aceite do cliente.
+          O garantidor e as operações de crédito só entram com interesse,
+          avaliação e aceite de quem administra.
         </p>
         <div className="mt-8 flex w-full max-w-lg items-center justify-center rounded-card border border-line bg-white px-10 py-8 shadow-[0_16px_40px_rgba(61,12,22,0.1)] sm:mt-10 sm:px-14 sm:py-11">
           <Image
