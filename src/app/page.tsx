@@ -1,11 +1,13 @@
 import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FaqList } from "@/components/sections/faq-list";
+import { GarantidorNote } from "@/components/sections/garantidor-note";
 import { HomeHero } from "@/components/sections/home-hero";
 import { Principles } from "@/components/sections/principles";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { ReguaSpotlight } from "@/components/sections/regua-spotlight";
 import { SegmentGrid } from "@/components/sections/segment-grid";
+import { BankingPartnerBand } from "@/components/sections/banking-partner-band";
 import { ServiceGrid } from "@/components/sections/service-grid";
 import { Testimonials } from "@/components/sections/testimonials";
 import { faqs } from "@/content/faq";
@@ -21,7 +23,8 @@ export default function HomePage() {
       <Principles />
       <ReguaSpotlight />
       <ServiceGrid tone="paper" />
-      <SegmentGrid />
+      <GarantidorNote />
+      <SegmentGrid tone="paper" />
       <ProcessSteps id="como-funciona" />
       <section className="bg-paper py-10 sm:py-12 md:py-16 lg:py-20" aria-labelledby="faq-titulo">
         <Container>
@@ -38,6 +41,7 @@ export default function HomePage() {
       </section>
       <CtaBand />
       <Testimonials />
+      <BankingPartnerBand />
     </>
   );
 }

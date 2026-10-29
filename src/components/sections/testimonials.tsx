@@ -181,24 +181,25 @@ function TestimonialCard({ item, active }: { item: Testimonial; active: boolean 
     <figure
       data-card=""
       aria-hidden={!active || undefined}
-      className="flex w-[min(78vw,19rem)] shrink-0 flex-col rounded-card border border-line bg-white p-5 sm:w-[21rem] sm:p-6"
+      className="flex w-[min(82vw,21rem)] shrink-0 flex-col rounded-card border border-line bg-white p-5 sm:w-[23rem] sm:p-6"
     >
       <blockquote className="flex-1">
         <p className="font-display text-base leading-7 font-medium tracking-tight text-ink sm:text-lg sm:leading-8">
           “{item.quote}”
         </p>
       </blockquote>
-      <figcaption className="mt-5 flex items-center gap-3 border-t border-line pt-4">
+      <figcaption className="mt-5 flex items-center gap-4 border-t border-line pt-4">
         <Image
           src={item.image}
           alt={active ? item.imageAlt : ""}
-          width={48}
-          height={48}
-          className="h-12 w-12 shrink-0 rounded-full object-cover"
+          width={96}
+          height={96}
+          sizes="96px"
+          className="h-20 w-20 shrink-0 rounded-full object-cover object-top sm:h-24 sm:w-24"
         />
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-ink">{item.name}</p>
-          <p className="mt-0.5 text-sm text-muted">{item.role}</p>
+          <p className="text-sm font-semibold text-ink sm:text-base">{item.name}</p>
+          <p className="mt-0.5 text-sm leading-5 text-muted">{item.role}</p>
         </div>
       </figcaption>
     </figure>

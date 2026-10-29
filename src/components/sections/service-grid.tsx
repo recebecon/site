@@ -16,8 +16,8 @@ export function ServiceGrid({
         <SectionHeading
           id="servicos-titulo"
           eyebrow="Soluções"
-          title="Duas cobranças. Um condomínio."
-          description="A taxa do mês e o débito antigo pedem caminhos diferentes."
+          title="Cobrança firme. Caixa protegido."
+          description="Régua no ciclo do mês, via judicial quando couber — e garantidor opcional quando o condomínio quiser avaliar."
         />
       ) : null}
       <div className={cx("grid gap-3 sm:gap-4 md:grid-cols-2", heading && "mt-6 sm:mt-8")}>

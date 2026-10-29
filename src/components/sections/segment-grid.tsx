@@ -3,9 +3,15 @@ import { segments } from "@/content/segments";
 import { Section, SectionHeading } from "@/design-system/ui/section";
 import { cx } from "@/lib/cx";
 
-export function SegmentGrid({ heading = true }: { heading?: boolean }) {
+export function SegmentGrid({
+  heading = true,
+  tone = "default",
+}: {
+  heading?: boolean;
+  tone?: "default" | "paper";
+}) {
   return (
-    <Section labelledBy={heading ? "segmentos-titulo" : undefined}>
+    <Section tone={tone} labelledBy={heading ? "segmentos-titulo" : undefined}>
       {heading ? (
         <SectionHeading
           id="segmentos-titulo"

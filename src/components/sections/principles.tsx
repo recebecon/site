@@ -2,8 +2,8 @@ import { Section, SectionHeading } from "@/design-system/ui/section";
 
 const principles = [
   {
-    title: "Cadência clara",
-    description: "Vencimento, atraso, conversa e acordo — sem lembrete solto.",
+    title: "Cadência no automático",
+    description: "Vencimento, atraso e acordo seguem a régua — sem lembrete solto no dia a dia.",
   },
   {
     title: "Acordo com critério",
@@ -21,8 +21,8 @@ export function Principles() {
       <SectionHeading
         id="principios-titulo"
         eyebrow="O que muda"
-        title="Menos improviso. Mais previsibilidade."
-        description="Ritmo, acordo e caminho formal quando a conversa não resolve."
+        title="Simples no dia a dia. Firme no caixa."
+        description="A cobrança deixa de depender de improviso. Tem ritmo, acordo e caminho formal quando a conversa não fecha."
       />
       <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-3 sm:gap-4">
         {principles.map((item) => (

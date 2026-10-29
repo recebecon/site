@@ -60,8 +60,8 @@ export function SiteFooter() {
             © {site.copyrightYear} {company.tradeName}. Cobrança para condomínios.
           </p>
           <p>
-            {company.legalName} · CNPJ {company.cnpj} · {company.city},{" "}
-            {company.state}
+            {company.tradeName.toUpperCase()} · CNPJ {company.cnpj} ·{" "}
+            {company.city}, {company.state}
           </p>
           <ul className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
             {legalLinks.map((item) => (
